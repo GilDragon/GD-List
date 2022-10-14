@@ -50,6 +50,7 @@ System.Console.WriteLine("=================Using List Ex1 ======================
 
 
     List<int> anynum = new List<int>();
+    int dupli = 0;
     while (anynum.Count < 5)
     {
 
@@ -58,8 +59,15 @@ System.Console.WriteLine("=================Using List Ex1 ======================
         if (anynum.Contains(numb))
         {
             System.Console.WriteLine("You have entered the same number. Enter a different number");
+            dupli++;
         }
         anynum.Add(numb);
+        if (anynum.Count == 5) 
+            {
+                Console.WriteLine("You have enetered these numbers");
+            }
+
+
     }
     anynum.Sort();
     foreach (int i in anynum)
@@ -72,20 +80,14 @@ System.Console.WriteLine("=================Using List Ex1 ======================
 
 
 System.Console.WriteLine("=================Using List Ex2 =========================");
-         var result = anynum.GroupBy(x => x)
-                         .Where(g => g.Count() > 1)
-                         .Select(x => new {Count = x.Count() })
-                         .ToList();
- Console.WriteLine(String.Join(", ", result));
+//          var result = anynum.GroupBy(x => x)
+//                          .Where(g => g.Count() > 1)
+//                          .Select(x => new {Count = x.Count() })
+//                          .ToList();
+//  Console.WriteLine(String.Join(", ", result));
 
+System.Console.WriteLine("You have entered same number " + dupli+"time(s)");
 
-// int dupli = 0;
-// for(int i = 0; i < anynum.Count; i++) 
-//     {
-//         if(anynum.Contains(numb) == anynum[i])
-//         dupli++;
-
-//     }
 
 
 
